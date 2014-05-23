@@ -6828,3 +6828,9 @@ blockquote.pull-left {
     padding-right: 0;
   }
 }
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif !important;
+	font-weight: 400 !important;
+}

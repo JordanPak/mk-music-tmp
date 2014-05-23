@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Concert Band MusicDistro
+Template Name: Marching Knights MusicDistro
 */
 ?>
 
@@ -35,7 +35,7 @@ Template Name: Concert Band MusicDistro
 							//------------------------------//
 							
 							// SLUG of the band (parent category)
-							$band_slug = 'concert-band';
+							$band_slug = 'marching-knights';
 							
 							
 							// Get the whole term BY slug, using the BAND SLUG (Parent Category Slug) 

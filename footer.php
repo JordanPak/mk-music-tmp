@@ -17,7 +17,7 @@
 					
 					<p class="pull-right"><a href="http://JpakMedia.com/" target="_blank">JpakMedia.com</a> | WP MusicDistro</p>
 			
-					<p class="attribution">&copy; JpakMedia 2014</p>
+					<p class="attribution">&copy; UCF Marching Knights 2014</p>
 				
 				</div> <!-- end #inner-footer -->
 				
