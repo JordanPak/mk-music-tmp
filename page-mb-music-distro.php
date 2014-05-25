@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Marching Knights MusicDistro
+Template Name: Marching Band MusicDistro
 */
 ?>
 
@@ -35,7 +35,7 @@ Template Name: Marching Knights MusicDistro
                                         <?php the_title(); ?>
                                         
                                         <!-- REPORT ISSUE BUTTON -->
-                                        <a class="btn btn-warning pull-right" target="_blank" href="http://ucfbands.com/report-issue"><span class="glyphicon glyphicon-exclamation-sign"></span> Report Issue</a>
+                                        <a class="btn btn-warning pull-right" href="report-issue"><span class="glyphicon glyphicon-exclamation-sign"></span> Report Issue</a>
                                         
                                     </h1>
                                 </div>
@@ -52,7 +52,7 @@ Template Name: Marching Knights MusicDistro
                                 //------------------------------//
                                 
                                 // SLUG of the band (parent category)
-                                $band_slug = 'marching-knights';
+                                $band_slug = 'marching-band';
                                 
                                 
                                 // Get the whole term BY slug, using the BAND SLUG (Parent Category Slug) 
