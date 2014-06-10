@@ -6,6 +6,18 @@ Template Name: Marching Knights MusicDistro
 
 <?php
 
+// CUSTOM STUFF DONE SINCE LAST WP MUSICDISTRO!
+
+// Added <hr> (and CSS) between song titles
+// Added a <div class="dl-btns"> to group buttons then added CSS to float them right
+// Ordered the arrangements aplhabetically by title
+// Add ability to show volume icon on recordings
+// Added posts_per_page to change limit from 10 to unlimited
+
+?>
+
+<?php
+
 //----------------------------//
 //-- WP MusicDistro Options --//
 //----------------------------//
@@ -215,10 +227,10 @@ $panel_header = 'h4';
                                             
     
                                             if( $selected != 0 ) {
-                                                echo '<p><b>Different Instrument?</b></p>';
+                                                echo '<p><b>Different Instrument? Recordings?</b></p>';
                                             }
                                             else {
-                                                echo '<p><b>Select an Instrument:</b></p>';
+                                                echo '<p><b>Select an Instrument or Recordings:</b></p>';
                                             }
                                             
                                             
@@ -276,8 +288,11 @@ $panel_header = 'h4';
                                             $arrangementSelection = array(
                                                 'post_type'			=> 'download',
                                                 'download_category'	=> $selected_instrument_slug,
-                                                'fields' => 'ids' // This is so only the ID is returned instead of the WHOLE post object (Performance)
-                                            );
+                                                'fields' => 'ids', // This is so only the ID is returned instead of the WHOLE post object (Performance)
+                                            	'orderby' => 'title',
+												'order' => 'ASC',
+												'posts_per_page' => -1
+											);
                                             
                                             
 											
@@ -349,7 +364,7 @@ $panel_header = 'h4';
                                                                         
 																		
                                                                         //-- Display Arrangement Title --//
-                                                                        echo '<b>' . get_the_title($arrangement) . ': </b>';
+                                                                        echo '<b>' . get_the_title($arrangement) . '</b><div class="dl-btns">';
                                                                         
                                                                         
 																		//-- Get Files (Names & URLSs) For Current Arrangement --//
@@ -438,23 +453,35 @@ $panel_header = 'h4';
                                                                                 // the disgusting thing that is EDD Free Downloads
                                                                                 
 																				
-																				// If the arrangment only has one part for a given instrument
-																				// (Detected by the input name not having a number)
-																				if ( 
-																					( is_numeric($explosion[1]) == FALSE ) &&
-																					( is_numeric($explosion[2]) == FALSE ) 
-																				   )
-																				{
-																					echo '<a class="btn btn-xs ' . $dl_btn_theme . '" href="'.$file['file'].'" target="_blank"><span class="' . $single_dl_glyphicon . '"></span></a>';
+																				// Exception for Recordings: Different Icon!
+																				if($selected_instrument_name == "Recordings") {
+																						
+																					echo '<a class="btn btn-xs ' . $dl_btn_theme . '" href="'.$file['file'].'" target="_blank"><span class="glyphicon glyphicon-play"></span></a>';																				
+																				
 																				}
 																				
 																				
-																				// For sheet music with more than one part for a given instrument
+																				// Not recording
 																				else {
-																					echo '<a class="btn btn-xs ' . $dl_btn_theme . '" href="'.$file['file'].'" target="_blank">' . $name . '</a>';
-																				}
 																				
-                                                                                
+																					// If the arrangment only has one part for a given instrument
+																					// (Detected by the input name not having a number)
+																					if ( 
+																						( is_numeric($explosion[1]) == FALSE ) &&
+																						( is_numeric($explosion[2]) == FALSE ) 
+																					   )
+																					{
+																						echo '<a class="btn btn-xs ' . $dl_btn_theme . '" href="'.$file['file'].'" target="_blank"><span class="' . $single_dl_glyphicon . '"></span></a>';
+																					}
+																					
+																					
+																					// For sheet music with more than one part for a given instrument
+																					else {
+																						echo '<a class="btn btn-xs ' . $dl_btn_theme . '" href="'.$file['file'].'" target="_blank">' . $name . '</a>';
+																					}
+																				
+																				} // Else: Not recording
+																				
 																				
                                                                                 // If it's not the last item, put in a space
                                                                                 if ( $counter != count($files)){
@@ -474,9 +501,12 @@ $panel_header = 'h4';
                                                                             
                                                                         } // foreach: files as file
                                                                         
+																		
+																		// Finish dl-btns
+																		echo '</div>';
                                                                         
 																		// Add Spacer
-																		echo '<br>';
+																		echo '<hr>';
 																		
 																		
                                                                     } // if: has_term download tag
