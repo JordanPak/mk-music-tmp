@@ -13,6 +13,7 @@ Template Name: Marching Knights MusicDistro
 // Ordered the arrangements aplhabetically by title
 // Add ability to show volume icon on recordings
 // Added posts_per_page to change limit from 10 to unlimited
+// Set fixed height on boxes, set overflow to auto, make titles inline-block, float right, and set width to 80%.
 
 ?>
 
@@ -217,7 +218,7 @@ $panel_header = 'h4';
                             
                             
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-8">
                                     
                                     
                                     <form class="form-horizontal" role="form">
@@ -261,7 +262,6 @@ $panel_header = 'h4';
                                             wp_dropdown_categories( $catArgs );
                                         ?>                 
                                         
-                                        <br>
                                         
                                         <!-- Submit Button -->
                                         <button type="submit" class="btn <?php echo $select_instrument_theme;?>"><?php echo $select_instrument_text; ?></button>                          

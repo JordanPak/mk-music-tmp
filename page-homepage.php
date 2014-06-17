@@ -21,13 +21,12 @@ Template Name: Homepage
 								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-home' );
 							?>
 
-							<div class="jumbotron" style="background-image: url('<?php echo $featured_src[0]; ?>'); background-repeat: no-repeat; background-position: 0 0;">
-				
+							<!--<div class="jumbotron" style="background-image: url('<?php echo $featured_src[0]; ?>'); background-repeat: no-repeat; background-position: 0 0;">-->
+							
 								<div class="page-header">
-									<h1><?php bloginfo('title'); ?><small><?php echo get_post_meta($post->ID, 'custom_tagline' , true);?></small></h1>
+									<h1><img src="http://ucfbands.com/themes/ucfmkv2/images/logo.png"><?php bloginfo('title'); ?><small style="font-size:50%;"><?php echo get_post_meta($post->ID, 'custom_tagline' , true);?></small></h1>
 								</div>				
-								
-							</div>
+							<!--</div>-->
 						
 						</header>
 						

@@ -15,7 +15,7 @@
 						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
 					
-					<p class="pull-right"><a href="http://JpakMedia.com/" target="_blank">JpakMedia.com</a> | WP MusicDistro</p>
+					<p class="pull-right">Maintained by the Marching Knight Media Coordinators <span>//</span> Developed by <a href="http://jpakmedia.com/" target="_blank">JpakMedia</a></p>
 			
 					<p class="attribution">&copy; UCF Marching Knights 2014</p>
 				
