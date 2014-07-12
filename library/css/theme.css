@@ -492,3 +492,16 @@ input.bootstrap_input {
 	max-width: 200px;
 	margin-right: 5px;
 }
+
+ul.mkul {
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+	margin-left: 20px;
+}
+
+ul.mkul li {
+	margin-bottom: 5px;
+}
